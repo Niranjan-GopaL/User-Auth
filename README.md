@@ -1,8 +1,8 @@
 # User-Auth
 
 Creating a  User-Authorisation system for a project
-React using Vite
-\ \ \
+React using Vite \ \ \
+
 
 ## HOW TO START SERVER:
 
