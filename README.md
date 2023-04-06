@@ -7,4 +7,10 @@ React using Vite \
 ## HOW TO START SERVER:
 
 -> npm install (installing all the dependencies required) \
--> npm run dev ( starting server at http://localhost: some_port_number )
+-> npm run dev ( starting server at http://localhost: some_port_number ) &nbsp;&nbsp;
+
+## Tech Stack
+- React  
+- Material UI
+- Firebase 
+- Vite
