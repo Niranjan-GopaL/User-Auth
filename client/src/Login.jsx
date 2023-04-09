@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/material";
 
+
 export default function Login() {
 
 // The function that is triggered onClick on the SignIn button
