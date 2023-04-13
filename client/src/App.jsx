@@ -10,16 +10,16 @@ function App() {
 
   return (
     <div className="App">
-      <SignInSide />
-      {/* <Login /> */}
-      {/* <BrowserRouter>
+      {/* <SignInSide />
+      <Login /> */}
+      <BrowserRouter>
 
         <Routes>
             <Route path='/Signin' element={<SignInSide />} />
             <Route path='/Login' element={<Login />} />
         </Routes>
 
-      </BrowserRouter> */}
+      </BrowserRouter>
       
     </div>
   )

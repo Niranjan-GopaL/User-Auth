@@ -1,11 +1,17 @@
-npm i express body-parser cors dotenv helmet morgan mongoose (for backend stuff)
-nodemon is also installed for auto server restarting
-added "dev" in scripts in package.json
+- npm i express body-parser cors dotenv helmet morgan mongoose (for backend stuff)
+- nodemon is also installed for auto server restarting
+- added "dev" in scripts in package.json
 
 
-for running the server:
-
+- for running the server:
 " npm run dev "
+
+!!!!--------------USEFUL_LATER---------------------!!!!
+- Routing was enabled by downgrading react-router-dom from latest version
+  to that in the version of in youtube-clone Project 
+
+
+
 
 
 <------------------------------------------ INTEGRATE THIS AS CHECKBOX DESIGN -------------------------------------------->
