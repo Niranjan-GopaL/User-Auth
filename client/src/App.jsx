@@ -1,22 +1,24 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
-import SignInSide from './Register'
-import Login from './Login';
+import Login from './Login'
+import Register from './Register';
+import ResetPassword from './ResetPassword';
 
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = ()=> {
 
   return (
     <div className="App">
-      {/* <SignInSide />
-      <Login /> */}
+
       <BrowserRouter>
 
         <Routes>
-            <Route path='/Signin' element={<SignInSide />} />
-            <Route path='/Login' element={<Login />} />
+
+            <Route path='/' element={<Login />} />
+            <Route path='/Register' element={<Register />} />
+            <Route path='/Reset' element={<ResetPassword />} />
+
         </Routes>
 
       </BrowserRouter>
