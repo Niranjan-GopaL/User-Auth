@@ -23,8 +23,24 @@ const handleSubmit = (event) => {
     // Console loggs the whatever is eneter
     console.log({
     email: data.get("email"),
-    password: data.get("password"),
+    InitialPassword: data.get("InitialPassword"),
+    NewPassword: data.get("NewPassword"),
     });
+
+    
+    // axios -------------------------------------------------------------------------------------
+    axios.post('/<ENTER_BACK_END_STUFF>', {
+        email: data.get("email"),
+        InitialPassword: data.get("InitialPassword"),
+        NewPassword: data.get("NewPassword"),
+    })
+    .then( (response) => {
+        console.log(response);
+    })
+    .catch( (error) => {
+        console.log(error);
+    });
+    // ------------------------------------------------------------------------------------------
 
 };
 
@@ -62,8 +78,8 @@ return (
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }} >
 
                 <TextField margin="normal" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" autoFocus />
-                <TextField margin="normal" required fullWidth name="password1" label="Initial Password" type="password" id="InitialPassword" autoComplete="current-password" />
-                <TextField margin="normal" required fullWidth name="password2" label="New Password" type="password" id="NewPassword" />
+                <TextField margin="normal" required fullWidth name="InitialPassword" label="Initial Password" type="password" id="InitialPassword" autoComplete="current-password" />
+                <TextField margin="normal" required fullWidth name="NewPassword" label="New Password" type="password" id="NewPassword" />
 
                 
                 {/* Customize the Color palatte by finding out the class name from dev tools and adding styles in App.css */}
