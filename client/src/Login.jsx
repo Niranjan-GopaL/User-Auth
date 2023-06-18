@@ -16,11 +16,18 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/material";
+import { styled } from '@mui/material/styles';
+import { useEffect } from 'react';
+
 
 
 export default function Login() {
 // The function that is triggered onClick on the SignIn button
+
+
 const handleSubmit = (event) => {
+
+  
 
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -45,16 +52,24 @@ const handleSubmit = (event) => {
 };
 
 return (
-    <Container component="main" maxWidth="lg">
-    <Box sx={{ marginTop: 8,}}>
-
+    
+    <Box sx={{ flexGrow: 1 ,backgroundImage: 'linear-gradient(315deg, #7f5a83 0%, #0d324d 74%)',backgroundPosition: 'top',
+}}>
+    <Container component="main" maxWidth="lg" sx={{ height: '100vh', width: '100vw',backgroundImage: 'linear-gradient(315deg, #7f5a83 0%, #0d324d 74%)' }}>
+    
+    <Container component="main" maxWidth="lg"  >
+    
+    <Box sx={{ marginTop: 8,  
+    }}>
+   
+  
 {/* Basically the entire thing is just two grid item => For image , For Sign-up functionality */}
         <Grid container>
         <CssBaseline />
 
 {/* Grid item for image. NOTE: if the screen width is smaller than a threshold , then this item is deleted  */}
         <Grid item xs={false} sm={4} md={7} sx={{
-            backgroundImage: "url(https://source.unsplash.com/random)",
+            backgroundImage: "url(https://source.unsplash.com/random?nature)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
                 t.palette.mode === "light"
@@ -65,12 +80,16 @@ return (
             }} />
 
 {/* Grid item for Rest of the functionalities */}
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square >
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square 
+        sx={{backgroundImage: 'linear-gradient(315deg, #7f5a83 0%, #0d324d 74%)'
+    }}>
 
             {/* The div with that Encloses  Entire thing*/}
-            <Box sx={{ my: 8, mx: 4, display: "flex", flexDirection: "column", alignItems: "center",}}>
+            <Box sx={{ my: 8, mx: 4, display: "flex", flexDirection: "column", alignItems: "center",backgroundImage: 'linear-gradient(315deg, #7f5a83 0%, #0d324d 74%)'
+,
+        }}>
 
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" sx={{ color: '#ffffff' }}>
                 Welcome Back
             </Typography>
 
@@ -78,8 +97,12 @@ return (
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }} >
                 
 
-                <TextField margin="normal" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" autoFocus />
-                <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password" />
+                <TextField margin="normal" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" autoFocus InputLabelProps={{
+        style: { color: "white" },
+      }} />
+                <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password" InputLabelProps={{
+        style: { color: "white" },
+                 }} />
 
                 {/* ----------Remember Me-------- */}
                 <FormControlLabel control={<Checkbox value="remember" color="primary" />} label="Remember me" />
@@ -91,24 +114,23 @@ return (
 {/* --------------------------------------------------------------------------------------------------------------------------------------------------------------- */}
 
 
-                <Grid container>
-                {/* First item on grid ----> FORGOT PASSWORD */}
-                <Grid item xs>
-                    {/* Insert link for forgot password */}
-                    <Link href="/Reset"  variant="body2" color="inherit" >
-                    Forgot password?
-                    </Link>
-                </Grid>
+<Grid container direction="column">
+      {/* First item on grid ----> FORGOT PASSWORD */}
+      <Grid item xs>
+        {/* Insert link for forgot password */}
+        <Link href="/Reset" variant="body2" color="inherit">
+          Forgot password?
+        </Link>
+      </Grid>
 
-
-                {/* Second item on grid ----> SIGN - UP */}
-                <Grid item>
-                    <Link href="/Register" variant="body2" color="inherit" >
-                    {/* Insert link to the Sign-Up */}
-                    {"Don't have an account? Sign Up"}
-                    </Link>
-                </Grid>
-                </Grid>
+      {/* Second item on grid ----> SIGN - UP */}
+      <Grid item>
+        <Link href="/Register" variant="body2" color="inherit">
+          {/* Insert link to the Sign-Up */}
+          {"Don't have an account? Sign Up"}
+        </Link>
+      </Grid>
+    </Grid>
 
             </Box>
 
@@ -118,7 +140,12 @@ return (
         </Grid>
 
 
-    </Box>
+        </Box>
+
     </Container>
+    </Container>
+    </Box>
   );
+  
+ 
 }
