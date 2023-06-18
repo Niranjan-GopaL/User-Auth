@@ -53,12 +53,12 @@ return (
     <Box sx={{ marginTop: 8,}}>
 
 {/* Basically the entire thing is just two grid item => For image , For Sign-up functionality */}
-        <Grid container>
+        <Grid container  sx={{backgroundImage: 'linear-gradient(315deg, #7f5a83 0%, #0d324d 74%)'}}>
         <CssBaseline />
 
 {/* Grid item for image. NOTE: if the screen width is smaller than a threshold , then this item is deleted  */}
         <Grid item xs={false} sm={4} md={7} sx={{
-            backgroundImage: "url(https://source.unsplash.com/random)",
+            backgroundImage: "url(https://source.unsplash.com/random?nature)",
             backgroundRepeat: "no-repeat",
             backgroundColor: (t) =>
                 t.palette.mode === "light"
@@ -69,19 +69,21 @@ return (
             }} />
 
 {/* Grid item for Rest of the functionalities */}
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square >
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square sx={{backgroundImage: 'linear-gradient(315deg, #7f5a83 0%, #0d324d 74%)'}} >
 
             {/* The div with that Encloses  Entire thing*/}
             <Box sx={{ my: 8, mx: 4, display: "flex", flexDirection: "column", alignItems: "center",}}>
 
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" sx={{ color: '#ffffff' }}>
                 Welcome !
             </Typography>
 
 {/* -------------------------------------------------------------IMPORTANT PART-------------------------------------------------------------------------------------------- */}
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1  }} >
 
-                <TextField margin="normal" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" autoFocus />
+                <TextField margin="normal" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" autoFocus InputLabelProps={{
+        style: { color: "white" },
+      }} />
                 {/* <TextField margin="normal" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password" /> */}
 
                 {/* Customize the Color palatte by  finding out the class name from dev tools and adding styles in App.css */}
